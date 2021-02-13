@@ -11,7 +11,20 @@ Our results indicate that anatomic bilaterality is preserved in the aging human 
 
 **Dataset description**
 
-The dataset contains a csv file, it can be opened as a Pandas dataframe containing the results of the automated segmentation performed with FreeSurfer. The dataset includes the columns:
+The dataset contains two csv files, fsl_lon.csv and free_lon.csv containing the subcortical segmentation and additional data performed with FSL and FreeSurfer respectively. The dataset includes the columns:
+- _age_: Age of the participant in the moment of performing the MRI scan 
+- _sex_: Sex of the participant encoded as 0 Male and 1 Female
+- _dx_last_: SLast diagnostic 0,1,2 Healthy, MCI and AD. 
+- _apoe_: APOE genotype was studied with total DNA isolated from peripheral blood following standard procedures. The APOE variable was coded 1 for the e4-carriers, and 0 for non-carriers. 
+-[free|fsl]_[R|L]_[Structure]: Volume in mm3 of each of the 14 subcortical structures segmented inthe study
+
+The dimensionality of the FreeSurfer dataset is 3929, 22 (subjects visits x variables)
+```
+df_free_lon.shape
+(3929, 22)
+df_fsl_lon.shape
+(3984, 22)
+``` 
 
 **MRI Data collection**
 
